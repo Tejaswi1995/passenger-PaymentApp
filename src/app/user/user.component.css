@@ -1,0 +1,9 @@
+
+.container{
+  margin-top: 20px;
+    border: #888;
+    width: fit-content;
+    padding: 25px;
+    border-style: groove;
+    border-width: thin;
+}

@@ -1,0 +1,37 @@
+<span>
+<button class="btn btn-secondary glyphicon glyphicon-arrow-left" [routerLink]="['']"></button>
+  </span>
+<div class="card m-3">
+
+  <h5 class="card-header">
+
+    User Details</h5>
+  <div class="card-body">
+
+    <div class="row">
+      <span class="col-6"> First Name</span>
+      <span class="col-6"> {{user?.firstName}}</span>
+    </div>
+    <div class="row">
+      <span class="col-6">Lastname </span>
+      <span class="col-6"> {{user?.lastName}} </span>
+    </div>
+    <div class="row">
+      <span class="col-6">Email </span>
+      <span class="col-6">  {{user?.email}}</span>
+    </div>
+    <div class="row">
+      <span class="col-6">  Phone</span>
+      <span class="col-6">  {{user?.phone}}</span>
+    </div>
+    <div class="row">
+      <span class="col-6">  Address</span>
+      <span class="col-6"> {{user?.address}}</span>
+    </div>
+    <br>
+    <div class="text-center">
+
+      <button class="btn btn-secondary" (click)="getPayment()" >Continue to Payment</button>
+    </div>
+  </div>
+</div>

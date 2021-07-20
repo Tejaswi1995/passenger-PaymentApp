@@ -1,0 +1,39 @@
+
+<div class="card m-3" *ngIf="!successStatus">
+  <h5 class="card-header">Payment Form </h5>
+  <div class="card-body">
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Credit card No.</label>
+        <input type="text" formControlName="cardNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.cardNo.errors }" />
+        <div *ngIf="submitted && form.cardNo.errors" class="invalid-feedback">
+          <div *ngIf="form.cardNo.errors.required">Card No. is required</div>
+          <div *ngIf="form.cardNo.errors?.maxlength || form.cardNo.errors?.minlength">Card No. must be 16 digit</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input type="text" formControlName="expirationDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.expirationDate.errors }" />
+        <div *ngIf="submitted && form.expirationDate.errors" class="invalid-feedback">
+          <div *ngIf="form.expirationDate.errors.required">Phone</div>
+          <div *ngIf="form.expirationDate.errors.expirationDate">Phone No must be valid</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>CVV</label>
+        <input type="text" formControlName="cva" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.cva.errors }" />
+        <div *ngIf="submitted && form.cva.errors" class="invalid-feedback">
+          <div *ngIf="form.cva.errors.required">CVA is required</div>
+          <div *ngIf="form.cva.errors?.maxlength || form.cva.errors?.minlength ">CVA must be 3 characters</div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-secondary mr-1">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="successStatus">
+  Redirecting to payment gateway..
+</div>
